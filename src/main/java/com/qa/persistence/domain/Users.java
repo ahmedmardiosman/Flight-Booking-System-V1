@@ -154,7 +154,7 @@ public class Users {
 	public void setFlightDetails(List<FlightDetails> FlightDetails) {
 		this.flightdetailsList = FlightDetails;
 	}
-
+	
 	private Long getCustomerId() {
 		return customerId;
 	}

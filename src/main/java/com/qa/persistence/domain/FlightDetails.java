@@ -90,7 +90,7 @@ public class FlightDetails {
 	public void setCvv(String cvv) {
 		this.cvv = cvv;
 	}
-
+	
 	private Long getCustomerId() {
 		return customerId;
 	}

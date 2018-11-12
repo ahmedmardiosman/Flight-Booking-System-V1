@@ -27,7 +27,7 @@ public class FlightDBRepository implements FlightRepository {
 
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
-	
+
 	public void setManager(EntityManager manager) {
 		this.manager = manager;
 	}
@@ -55,14 +55,14 @@ public class FlightDBRepository implements FlightRepository {
 		Collection<FlightDetails> flights = (Collection<FlightDetails>) query3.getResultList();
 		return jsonConverter.getJSONForObject(flights);
 	}
-	
+
 	@Transactional(REQUIRED)
 	public String getUser(Long customerId) {
 		Users aUser = findUser(customerId);
 
 		return jsonConverter.getJSONForObject(aUser);
 	}
-	
+
 	@Transactional(REQUIRED)
 	public String getFlight(Long flightId) {
 		FlightDetails aFlight = findFlight(flightId);
@@ -143,48 +143,49 @@ public class FlightDBRepository implements FlightRepository {
 	private FlightDetails findFlight(Long flightId) {
 		return manager.find(FlightDetails.class, flightId);
 	}
-	
-	//flightDestinationsEntity manager to persist data
+
+	// flightDestinationsEntity manager to persist data
 
 	public String getAllFlightDestinations() {
 		Query query4 = manager.createQuery("SELECT a FROM FlightDestinations a");
 		Collection<FlightDestinations> allFlightDestinations = (Collection<FlightDestinations>) query4.getResultList();
 		return jsonConverter.getJSONForObject(allFlightDestinations);
 	}
-	
+
 	@Transactional(REQUIRED)
 	public String getFlightDestination(Long destinationId) {
 		FlightDestinations aFlightDestination = findFlightDestination(destinationId);
 
 		return jsonConverter.getJSONForObject(aFlightDestination);
 	}
-	
-	
+
+	@Transactional(REQUIRED)
 	public String createFlightDestination(String flightDestination) {
-		FlightDestinations aFlightDestination = jsonConverter.getObjectForJSON(flightDestination, FlightDestinations.class);
+		FlightDestinations aFlightDestination = jsonConverter.getObjectForJSON(flightDestination,
+				FlightDestinations.class);
 		manager.persist(aFlightDestination);
 		return "{\"message\": \"A flight Destination has been sucessfully created\"}";
 	}
-	
+
 //	{
 //        "destinationCountry": "Gedsgdsfadfagrmany",
 //        "destinationCity": "Berlsdfasfin",
 //        "destinationDistance": "932",
 //        "destinationPrice": "100"
 //    }
-	
+
+	@Transactional(REQUIRED)
 	public String updateFlightDestination(Long destinationId, String updatedFlightDestination) {
-		FlightDestinations aFlightDestination = jsonConverter.getObjectForJSON(updatedFlightDestination, FlightDestinations.class);
+		FlightDestinations aFlightDestination = jsonConverter.getObjectForJSON(updatedFlightDestination,
+				FlightDestinations.class);
 		FlightDestinations flightDestinationInDB = findFlightDestination(destinationId);
 		if (flightDestinationInDB != null) {
-			flightDestinationInDB.setDestinationCountry(aFlightDestination.getDestinationCountry());
-			flightDestinationInDB.setDestinationCity(aFlightDestination.getDestinationCity());
-			flightDestinationInDB.setDestinationDistance(aFlightDestination.getDestinationDistance());
-			flightDestinationInDB.setDestinationPrice(aFlightDestination.getDestinationPrice());
+
+			flightDestinationInDB.setDestPrice(aFlightDestination.getDestPrice());
 		}
-		return "{\"message\": \"Flight Destination has been sucessfully updated.\"}";
+		return "{\"message\": \"Flight Destination been sucessfully updated.\"}";
 	}
-	
+
 	@Transactional(REQUIRED)
 	public String deleteFlightDestination(Long destinationId) {
 		FlightDestinations aFlightDestination = findFlightDestination(destinationId);
@@ -193,8 +194,7 @@ public class FlightDBRepository implements FlightRepository {
 		}
 		return "{\"message\": \"A flight destination was sucessfully deleted\"}";
 	}
-	
-	
+
 	private FlightDestinations findFlightDestination(Long destinationId) {
 		return manager.find(FlightDestinations.class, destinationId);
 	}

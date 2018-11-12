@@ -1,7 +1,5 @@
 package com.qa.persistence.repository;
 
-import javax.ws.rs.PathParam;
-
 public interface FlightRepository {
 
 	String getAllUserAndFlightInformation();

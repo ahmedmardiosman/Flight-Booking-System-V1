@@ -12,10 +12,10 @@ INSERT INTO FlightDetails ( flightId, customer_Id, destinationCountry, destinati
 INSERT INTO FlightDetails ( flightId, customer_Id, destinationCountry, destinationCity, priceOfFlight, cardNumber, expiryDate, cvv) VALUES (4, 2, 'Germany', 'Berlin', '533', '9865471214547854', '05/2022', '536')
 
 
-INSERT INTO FlightDestinations ( destinationId, destinationCountry, destinationCity, destinationDistance, destinationPrice ) VALUES (1, 'Germany', 'Berlin', '932', '100')
-INSERT INTO FlightDestinations ( destinationId, destinationCountry, destinationCity, destinationDistance, destinationPrice ) VALUES (2, 'Japan', 'Tokyo', '9569', '1000')
-INSERT INTO FlightDestinations ( destinationId, destinationCountry, destinationCity, destinationDistance, destinationPrice ) VALUES (3, 'Egypt', 'Cairo', '3515', '500')
-INSERT INTO FlightDestinations ( destinationId, destinationCountry, destinationCity, destinationDistance, destinationPrice ) VALUES (4, 'France', 'Paris', '343', '80')
-INSERT INTO FlightDestinations ( destinationId, destinationCountry, destinationCity, destinationDistance, destinationPrice ) VALUES (5, 'Australia', 'Canberra', '17000', '1400')
-INSERT INTO FlightDestinations ( destinationId, destinationCountry, destinationCity, destinationDistance, destinationPrice ) VALUES (6, 'Brazil', 'Brasilia', '8807', '860')
-INSERT INTO FlightDestinations ( destinationId, destinationCountry, destinationCity, destinationDistance, destinationPrice ) VALUES (7, 'Mauritius', 'Port Louis', '9744', '920')
+INSERT INTO FlightDestinations ( destinationId, destCountry, destCity, destDistance, destPrice ) VALUES (1, 'Germany', 'Berlin', '932', '100')
+INSERT INTO FlightDestinations ( destinationId, destCountry, destCity, destDistance, destPrice ) VALUES (2, 'Japan', 'Tokyo', '9569', '1000')
+INSERT INTO FlightDestinations ( destinationId, destCountry, destCity, destDistance, destPrice ) VALUES (3, 'Egypt', 'Cairo', '3515', '500')
+INSERT INTO FlightDestinations ( destinationId, destCountry, destCity, destDistance, destPrice ) VALUES (4, 'France', 'Paris', '343', '80')
+INSERT INTO FlightDestinations ( destinationId, destCountry, destCity, destDistance, destPrice ) VALUES (5, 'Australia', 'Canberra', '17000', '1400')
+INSERT INTO FlightDestinations ( destinationId, destCountry, destCity, destDistance, destPrice ) VALUES (6, 'Brazil', 'Brasilia', '8807', '860')
+INSERT INTO FlightDestinations ( destinationId, destCountry, destCity, destDistance, destPrice ) VALUES (7, 'Mauritius', 'Port Louis', '9744', '920')

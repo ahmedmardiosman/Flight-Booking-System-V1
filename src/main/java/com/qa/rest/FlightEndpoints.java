@@ -47,7 +47,7 @@ public class FlightEndpoints {
 	public String getUser(@PathParam("id") Long customerId) {
 		return service.getUser(customerId);
 	}
-	
+
 	@Path("/getFlight/{id}")
 	@GET
 	@Produces({ "application/json" })
@@ -149,11 +149,9 @@ public class FlightEndpoints {
 	public String deleteFlight(@PathParam("id") Long flightId) {
 		return service.deleteFlight(flightId);
 	}
-	
-	
-	//FlightDestinations Endpoints
-	
-	
+
+	// FlightDestinations Endpoints
+
 	@Path("/getAllFlightDestinations")
 	@GET
 	@Produces({ "application/json" })
@@ -167,8 +165,7 @@ public class FlightEndpoints {
 	public String getFlightDestination(@PathParam("id") Long destinationId) {
 		return service.getFlightDestination(destinationId);
 	}
-	
-	
+
 	@Path("/createFlightDestination")
 	@POST
 	@Produces({ "application/json" })
@@ -177,21 +174,19 @@ public class FlightEndpoints {
 	}
 
 	
+	//this is not working??
 	@Path("/updateFlightDestination/{id}")
 	@PUT
 	@Produces({ "application/json" })
 	public String updateFlightDestination(@PathParam("id") Long destinationId, String updatedFlightDestination) {
 		return service.updateFlightDestination(destinationId, updatedFlightDestination);
 	}
-	
-	
+
 	@Path("/deleteFlightDestination/{id}")
 	@DELETE
 	@Produces({ "application/json" })
 	public String deleteFlightDestination(@PathParam("id") Long destinationId) {
 		return service.deleteFlightDestination(destinationId);
 	}
-	
-	
 
 }

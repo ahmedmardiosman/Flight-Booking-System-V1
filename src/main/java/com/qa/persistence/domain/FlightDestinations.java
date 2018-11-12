@@ -11,57 +11,55 @@ public class FlightDestinations {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long destinationId;
-	private String destinationCountry;
-	private String destinationCity;
-	private String destinationDistance;
-	private String destinationPrice;
+	private String destCountry;
+	private String destCity;
+	private String destDistance;
+	private String destPrice;
 
 	public FlightDestinations() {
 	}
 
-	public FlightDestinations(String destinationCountry, String destinationCity, String destinationDistance,
-			String destinationPrice) {
+	public FlightDestinations(String destCountry, String destCity, String destDistance, String destPrice) {
 
-		this.setDestinationCountry(destinationCountry);
-		this.setDestinationCity(destinationCity);
-		this.setDestinationDistance(destinationDistance);
-		this.setDestinationPrice(destinationPrice);
+		this.setDestCountry(destCountry);
+		this.setDestCity(destCity);
+		this.setDestDistance(destDistance);
+		this.setDestPrice(destPrice);
 
+	}
+
+	public String getDestCountry() {
+		return destCountry;
+	}
+
+	public void setDestCountry(String destCountry) {
+		this.destCountry = destCountry;
+	}
+
+	public String getDestCity() {
+		return destCity;
+	}
+
+	public void setDestCity(String destCity) {
+		this.destCity = destCity;
+	}
+
+	public String getDestDistance() {
+		return destDistance;
+	}
+
+	public void setDestDistance(String destDistance) {
+		this.destDistance = destDistance;
+	}
+
+	public String getDestPrice() {
+		return destPrice;
+	}
+
+	public void setDestPrice(String destPrice) {
+		this.destPrice = destPrice;
 	}
 	
-
-	public String getDestinationCountry() {
-		return destinationCountry;
-	}
-
-	public void setDestinationCountry(String destinationCountry) {
-		this.destinationCountry = destinationCountry;
-	}
-
-	public String getDestinationCity() {
-		return destinationCity;
-	}
-
-	public void setDestinationCity(String destinationCity) {
-		this.destinationCity = destinationCity;
-	}
-
-	public String getDestinationDistance() {
-		return destinationDistance;
-	}
-
-	public void setDestinationDistance(String destinationDistance) {
-		this.destinationDistance = destinationDistance;
-	}
-
-	public String getDestinationPrice() {
-		return destinationPrice;
-	}
-
-	public void setDestinationPrice(String destinationPrice) {
-		this.destinationPrice = destinationPrice;
-	}
-
 	private Long getDestinationId() {
 		return destinationId;
 	}
