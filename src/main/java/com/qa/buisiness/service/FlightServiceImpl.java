@@ -69,7 +69,7 @@ public class FlightServiceImpl implements FlightService {
 	}
 
 	public String updateFlightDestination(Long destinationId, String updatedFlightDestination) {
-		return repo.updateFlight(destinationId, updatedFlightDestination);
+		return repo.updateFlightDestination(destinationId, updatedFlightDestination);
 	}
 	
 	public String deleteFlightDestination(Long destinationId) {
